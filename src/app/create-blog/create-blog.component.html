@@ -1,0 +1,26 @@
+<div class="container">
+  <label class="">Title</label>
+  <input  class="form-control"  name="title" type="text" #title  required>
+
+  <label class="">Description</label>
+  <br>
+  <textarea class="description-text" rows="6" cols="60" name="description" #description> </textarea>
+  <br>
+
+  <label class="">Author</label>
+  <input  class="form-control" name="author" type="text"  #author required>
+
+  <label class="">Image</label>
+  <input  class="form-control" name="image" value="https://wallpaperbrowse.com/media/images/soap-bubble-1958650_960_720.jpg" type="text"  #image required>
+
+  <label class="">Image Title</label>
+  <input  class="form-control" name="imageTitle" type="text" #imageTitle="ngModel" ngModel="{{blog?.imageTitle}}" required>
+
+  <label class="">Image Subtitle</label>
+  <input  class="form-control" name="imageSubtitle" type="text" #imageSubtitle="ngModel" ngModel="{{blog?.imageSubtitle}}" required>
+
+  <div class="control-buttons">
+    <button style="margin-right: 8px;" class="btn btn-success" (click)="addBlog(title.value,description.value,author.value,image.value,imageTitle.value,imageSubtitle.value)">Send</button>
+    <button class="btn btn-primary" routerLink="/home">Back</button>
+  </div>
+</div>

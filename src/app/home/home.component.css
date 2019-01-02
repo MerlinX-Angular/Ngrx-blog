@@ -1,0 +1,9 @@
+.line {
+  border-bottom: 1px solid #DDE4E9;
+}
+.descript {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

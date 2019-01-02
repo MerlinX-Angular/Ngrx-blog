@@ -1,0 +1,34 @@
+<div *ngIf="profile">
+  <div class="jumbotron jumbotron-fluid" [ngStyle]="{'background-image':'url('+profile?.image+')'}" onError="profile?.image='https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'">
+
+  <div class="container">
+    <h1 class="display-4">{{profile?.imageTitle}}</h1>
+    <p>{{profile?.imageSubtitle}}</p>
+  </div>
+</div>
+<div class="container">
+  <h1 style="text-align:center;letter-spacing: 9px;text-transform:uppercase;">{{profile?.title}}</h1>
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-6 date">{{profile?.date | date:'longDate' }}</div>
+    <div class="col-md-6 col-sm-6 col-6 author">POSTED BY {{profile?.author}}</div>
+  </div>
+</div>
+
+<div class="container blog-text">
+  <p>
+    {{profile?.description}}
+    <br><br>
+  </p>
+</div>
+
+<div class="container social">
+  <div class="row">
+    <div class="col-md-3 social-buttons">SHARE:</div>
+    <div class="col-md-3 social-buttons">TWITTER</div>
+    <div class="col-md-3 social-buttons">FACEBOOK</div>
+    <div class="col-md-3 social-buttons">GOOGLE+</div>
+  </div>
+</div>
+<br><br>
+
+</div>

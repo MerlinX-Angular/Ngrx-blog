@@ -1,0 +1,29 @@
+<div class="container">
+  <h3>All Posts</h3>
+  <div *ngIf="this.blogsArray?.length == 0">
+    No posts available
+  </div>
+  <!--   <div *ngFor="let blog of blogs|async" class="row padding-post">    -->
+  <div *ngFor="let blog of blogsArray | reverse" class="row padding-post">
+    <div class="col-lg-4 col-md-6 col-sm-12 ">
+      <img class="img-fluid" src="{{blog?.image}}">
+    </div>
+    <div class="col-lg-8 col-md-6 col-sm-12 line">
+      <div class="post-title">
+        {{blog?.title}}
+      </div>
+      <p class="descript">{{blog?.description}}</p>
+      <div class="metas">
+        POSTED BY {{blog?.author}}
+      </div>
+
+      <div class="cont">
+        <button class="btn btn-primary" (click)="loadProfile(blog)" [routerLink]="['profile/'+blog.id]">Continue reading</button>
+      </div>
+
+      <button style="margin-right: 8px;margin-bottom: 15px;" class="btn btn-success" (click)="editBlog(blog)">Edit</button>
+      <button style="margin-bottom: 15px;" class="btn btn-danger" (click)="deleteBlog(blog)">Delete</button>
+    </div>
+  </div>
+
+</div>
